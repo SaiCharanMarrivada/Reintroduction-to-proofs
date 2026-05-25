@@ -1,0 +1,3 @@
+example {P : Prop} (p : P) : P := by
+  assumption
+  /- exact p -/
