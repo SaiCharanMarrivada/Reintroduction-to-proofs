@@ -1,5 +1,5 @@
 theorem Bool.not_involutive : not ∘ not = id := by
-  ext b
-  exact match b with
+  exact funext fun b =>
+    match b with
     | true => rfl
     | false => rfl
