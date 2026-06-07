@@ -2,5 +2,4 @@ theorem Function.Surjective.comp1 {A B C : Type} (f : A → B) (g : B → C) (f_
   exact fun c =>
     let ⟨b, gb⟩ := g_is_surj c
     let ⟨a, fa⟩ := f_is_surj b
-    let h1 : g (f a) = c := (Eq.mpr (congrArg (fun a => g a = c) fa)) gb
-    ⟨a, h1⟩
+    ⟨a, Eq.trans (congrArg g fa) gb⟩
