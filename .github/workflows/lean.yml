@@ -3,8 +3,19 @@ name: Continuous Integration
 on:
   push:
     branches: [ main ]
+    paths:
+      - '**/*.lean'
+      - 'lakefile.lean'
+      - 'lean-toolchain'
+      - 'lake-manifest.json'
+
   pull_request:
     branches: [ main ]
+    paths:
+      - '**/*.lean'
+      - 'lakefile.lean'
+      - 'lean-toolchain'
+      - 'lake-manifest.json'
 
 jobs:
   build:
