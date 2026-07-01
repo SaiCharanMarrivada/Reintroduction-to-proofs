@@ -6,6 +6,6 @@ example : ∀ m n : Nat, m + n = n + m := by
       | succ n' => 
           calc 
             m + (n' + 1) = m + n' + 1 := add_succ m n'
-            m + n' + 1 = n' + m + 1 := congrArg succ (add_comm m n') 
-            n' + m + 1 = n' + 1 + m := (Nat.succ_add n' m).symm
+            _ = n' + m + 1 := congrArg succ (add_comm m n') 
+            _ = n' + 1 + m := (Nat.succ_add n' m).symm
   exact add_comm
