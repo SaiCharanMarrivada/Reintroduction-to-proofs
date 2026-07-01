@@ -1,5 +1,6 @@
 ## Reintroduction to proofs
 [![Continuous Integration](https://github.com/SaiCharanMarrivada/Reintroduction-to-proofs/actions/workflows/lean.yml/badge.svg)](https://github.com/SaiCharanMarrivada/Reintroduction-to-proofs/actions/workflows/lean.yml)
+
 My solutions to [reintroduction to proofs](https://adam.math.hhu.de/#/g/emilyriehl/reintroductiontoproofs) lean game. I tried to use proof terms instead of tactics directly whenever I can. The goal is to replace all tactic based proofs with 
 term mode proofs. I am still learning, so I am cleaning up as I go.
 
