@@ -4,5 +4,4 @@ example : ¬ (∃ n : Nat, succ n = 0) := by
     | zero => False
     | succ n' => True
   exact fun ⟨n, h⟩ =>
-    let f : P (succ n) → P 0 := Eq.mp (congrArg P h);
-    f True.intro
+    ((congrArg P h).mp : P (succ n) -> P 0) True.intro

@@ -3,5 +3,5 @@ example : ¬ (false = true) :=
     | false => False
     | true => True;
   fun p =>
-    let f : P true -> P false := Eq.mpr (congrArg P p);
-    f True.intro
+    -- congrArg P p : P true = P false
+    ((congrArg P p).mpr : P true -> P false) True.intro 
