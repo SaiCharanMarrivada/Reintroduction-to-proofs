@@ -5,6 +5,7 @@ theorem Function.bijective_of_invertible' {A B : Type} (f : A → B) (inv : ∃ 
       let h2 := (congrArg g h)
       let h3 := (left_inv x).symm
       let h4 := (left_inv y)
+      -- h3.trans (h2.trans h4),
       (h3.trans h2).trans h4,
     fun b => ⟨g b, right_inv b⟩
   ⟩
