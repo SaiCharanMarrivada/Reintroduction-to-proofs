@@ -1,6 +1,11 @@
+open Nat
 example : ∀ m n : Nat, m + n = n + m := by
-  exact fun m n => by
-    induction n with
-      | zero => rw [Nat.zero_add]; rfl
-      -- adding 'try' because on newer versions of lean, 'rw' closes the goal
-      | succ n' ih => rw [Nat.add_succ, ih, Nat.succ_add]; try rfl
+  let rec add_comm (m n : Nat) : m + n = n + m :=
+    match n with
+      | zero => (Nat.zero_add m).symm
+      | succ n' => 
+          calc 
+            m + (n' + 1) = m + n' + 1 := add_succ m n'
+            m + n' + 1 = n' + m + 1 := congrArg succ (add_comm m n') 
+            n' + m + 1 = n' + 1 + m := (Nat.succ_add n' m).symm
+  exact add_comm
