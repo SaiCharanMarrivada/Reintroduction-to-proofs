@@ -3,5 +3,5 @@ example : ¬ (false = true) :=
     | false => False
     | true => True;
   fun p =>
-    -- congrArg P p : P true = P false
+    -- congrArg P p : P false = P true 
     ((congrArg P p).mpr : P true -> P false) True.intro 
