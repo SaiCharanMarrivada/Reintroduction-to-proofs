@@ -1,13 +1,11 @@
 example {A B C : Type} : (A × (B ⊕ C) → (A × B) ⊕ (A × C)) × ((A × B) ⊕ (A × C) → A × (B ⊕ C)) := by
-  constructor
-  intro a_borc
-  let (a, borc) := a_borc
-  rcases borc with (b | c)
-  left; exact ⟨a, b⟩
-  right; exact ⟨a, c⟩
-  intro ab_or_ac
-  rcases ab_or_ac with (ab | ac)
-  let (a, b) := ab
-  exact (a, Sum.inl b)
-  let (a, c) := ac
-  exact (a, Sum.inr c)
+  exact (
+    fun (a, borc) =>
+      match borc with 
+      | .inl b => .inl (a, b)
+      | .inr c => .inr (a, c),
+    fun ab_ac =>
+      match ab_ac with
+      | .inl (a, b) => (a, .inl b)
+      | .inr (a, c) => (a, .inr c)
+  ) 
