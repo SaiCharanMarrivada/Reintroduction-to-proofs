@@ -1,7 +1,7 @@
 ## Reintroduction to proofs
 [![Continuous Integration](https://github.com/SaiCharanMarrivada/Reintroduction-to-proofs/actions/workflows/lean.yml/badge.svg)](https://github.com/SaiCharanMarrivada/Reintroduction-to-proofs/actions/workflows/lean.yml)
 
-My solutions to the [reintroduction to proofs](https://adam.math.hhu.de/#/g/emilyriehl/reintroductiontoproofs) lean game. Most of the code uses term-mode proofs, except proofs for initial worlds ([type_world](./type_world) and [implication_world](./implication_world)) which use simple tactics like `assumption`,  `apply`.  
+My solutions to the [Reintroduction to proofs](https://adam.math.hhu.de/#/g/emilyriehl/reintroductiontoproofs) lean game. Most of the code uses term-mode proofs, except proofs for initial worlds ([type_world](./type_world) and [implication_world](./implication_world)) which use simple tactics like `assumption`,  `apply`.  
 
 ## Building the Project
 
